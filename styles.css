@@ -149,8 +149,34 @@ ul {
 /* Logo */
 .logo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   line-height: 1;
+  gap: 10px;
+}
+
+/* Imagen del logo — teñida al dorado del sitio */
+.logo-img {
+  height: 38px;
+  width: auto;
+  /* Convierte el azul original al dorado --color-gold (#c9a84b) */
+  filter: brightness(0) saturate(100%)
+          invert(68%) sepia(42%) saturate(500%)
+          hue-rotate(5deg) brightness(95%) contrast(90%);
+  transition: filter var(--ease);
+  flex-shrink: 0;
+}
+
+.logo:hover .logo-img,
+.logo:focus .logo-img {
+  filter: brightness(0) saturate(100%)
+          invert(82%) sepia(42%) saturate(600%)
+          hue-rotate(5deg) brightness(105%) contrast(95%);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
   gap: 3px;
 }
 
@@ -623,6 +649,26 @@ ul {
   letter-spacing: 0.16em;
   color: var(--color-gold);
   margin-bottom: 0.75rem;
+}
+
+/* Logo en el footer */
+.footer-logo-img {
+  height: 32px;
+  width: auto;
+  margin-bottom: 0.6rem;
+  /* Mismo tono dorado, ligeramente más tenue */
+  filter: brightness(0) saturate(100%)
+          invert(68%) sepia(42%) saturate(500%)
+          hue-rotate(5deg) brightness(85%) contrast(90%);
+  opacity: 0.85;
+  transition: opacity var(--ease), filter var(--ease);
+}
+
+.footer-logo-img:hover {
+  opacity: 1;
+  filter: brightness(0) saturate(100%)
+          invert(82%) sepia(42%) saturate(600%)
+          hue-rotate(5deg) brightness(95%) contrast(95%);
 }
 
 .footer-desc {
